@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://csm6jex22yac1"]
+
+[ext_resource type="Script" uid="uid://dyix78smbw4l" path="res://canvas.gd" id="1_ig7tw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dm0k"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Thanks for hosting the HG GJ.
+
+This Morgan had a character evolution arc and knows when to drop a side project.
+
+Stay Hydrated.
+Here is some digital grass to touch. Doesn't replace the real stuff."
+fit_content = true
+
+[node name="SpacerPanel" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7dm0k")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="Panel/VBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(360, 200)
+render_target_update_mode = 4
+
+[node name="Node2D" type="Node2D" parent="Panel/VBoxContainer/SubViewportContainer/SubViewport"]
+script = ExtResource("1_ig7tw")
