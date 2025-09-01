@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://csm6jex22yac1"]
+[gd_scene load_steps=4 format=3 uid="uid://csm6jex22yac1"]
 
 [ext_resource type="Script" uid="uid://dyix78smbw4l" path="res://canvas.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://38kkxxm0xe64" path="res://corn.tscn" id="2_0xm2m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dm0k"]
 
@@ -35,7 +36,7 @@ text = "Thanks for hosting the HG GJ.
 This Morgan had a character evolution arc and knows when to drop a side project.
 
 Stay Hydrated.
-Here is some digital grass to touch. Doesn't replace the real stuff."
+Here is some digital grass to plant and touch. Doesn't replace the real stuff."
 fit_content = true
 
 [node name="SpacerPanel" type="Panel" parent="Panel/VBoxContainer"]
@@ -45,12 +46,13 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_7dm0k")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
-mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="Panel/VBoxContainer/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(360, 200)
 render_target_update_mode = 4
 
-[node name="Node2D" type="Node2D" parent="Panel/VBoxContainer/SubViewportContainer/SubViewport"]
+[node name="Canvas" type="Node2D" parent="Panel/VBoxContainer/SubViewportContainer/SubViewport"]
 script = ExtResource("1_ig7tw")
+
+[node name="Seeder" parent="Panel/VBoxContainer/SubViewportContainer/SubViewport/Canvas" instance=ExtResource("2_0xm2m")]
