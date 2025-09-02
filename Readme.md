@@ -2,7 +2,7 @@
 ![alt text](image.png)
 
 ## HG GJ 2025 Submission
-
+https://domestic-cats.itch.io/morgan-the-dropout
 ### Motivation
 1. I was committed to submit something small
 1. I wanted to do something artsy without Sprites or models
